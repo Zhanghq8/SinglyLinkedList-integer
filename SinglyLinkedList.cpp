@@ -33,12 +33,12 @@ int SinglyLinkedList::countNode()
 bool SinglyLinkedList::setNode(int data, int index)
 {
 
-	Node* temp2 = head;
+	Node* temp1 = head;
 	for (int i = 0; i < index-1; i++)
 	{
-		temp2 = temp2->next;
+		temp1 = temp1->next;
 	}
-	temp2->data = data;
+	temp1->data = data;
 
 }
 

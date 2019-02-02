@@ -39,6 +39,7 @@ bool SinglyLinkedList::setNode(int data, int index)
 		temp = temp->next;
 	}
 	temp->data = data;
+	return true;   
 
 }
 
@@ -53,7 +54,7 @@ bool SinglyLinkedList::insertNode(int data, int index)
     {
     	temp1-> next = head;
     	head = temp1;
-    	return true;
+    	return true;   
     }
     else
     {
@@ -63,7 +64,8 @@ bool SinglyLinkedList::insertNode(int data, int index)
     		temp2 = temp2->next;
     	}
     	temp1->next = temp2->next;
-    	temp2->next = temp1;
+    	temp2->next = temp1;   
+	return true;   
     }
 
 }
@@ -78,7 +80,7 @@ bool SinglyLinkedList::insertEnd(int data)
 		temp1->data = data;
 		temp1->next = NULL;
 		head = temp1;
-		return true;
+		return true;   
 	}
 	else
 	{
@@ -91,7 +93,7 @@ bool SinglyLinkedList::insertEnd(int data)
 		temp2->data = data;
 		temp2->next = NULL;
 		temp1->next = temp2;
-		return true;
+		return true;   
 	}
 
 }
@@ -104,6 +106,7 @@ bool SinglyLinkedList::deleteNode(int index)
 	if (index == 1)
 	{
 		head = temp1->next;
+		return true;   
 	}
 	else
 	{
@@ -114,7 +117,7 @@ bool SinglyLinkedList::deleteNode(int index)
 		Node* temp2 = temp1->next;
 		temp1->next = temp2->next;
 		delete temp2;
-
+		return true;   
 	}
 
 }
@@ -131,6 +134,7 @@ bool SinglyLinkedList::deleteEnd()
 	Node* temp2 = temp1->next;
 	temp1->next = temp2->next;
 	delete temp2;
+	return true;   
 
 }
 

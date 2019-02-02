@@ -22,7 +22,6 @@ class SinglyLinkedList
 {
 private:
     Node* head;
-    int listLength;
     
 public:
     
@@ -50,12 +49,14 @@ public:
     // //delete all node in current list
     // bool clearList();
 
+    // reverse current list
+    bool reverseList();
 
     //read node at a specific position
-    void displayNode(int index);
+    bool displayNode(int index);
 
     //read current list
-    void displayList();
+    bool displayList();
     
     //deconstructor
     ~SinglyLinkedList();

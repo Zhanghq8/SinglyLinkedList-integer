@@ -29,7 +29,7 @@ int SinglyLinkedList::countNode()
 bool SinglyLinkedList::setNode(int data, int index)
 {
 	int count = countNode();
-	if (index > 0 || index <= count)
+	if (index < 0 || index > count)
 	{
 		std::cout << "ERROR: the index is out of range!(from 1 to max number)" << std::endl;
 		return false;

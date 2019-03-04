@@ -110,7 +110,7 @@ bool SinglyLinkedList::insertEnd(int data)
 bool SinglyLinkedList::deleteNode(int index)
 {
 	int count = countNode();
-	if (index > 0 || index <= count)
+	if (index < 0 || index > count)
 	{
 		std::cout << "ERROR: the index is out of range!(from 1 to max number)." << std::endl;
 		return false;

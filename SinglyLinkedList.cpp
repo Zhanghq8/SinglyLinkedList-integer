@@ -49,12 +49,7 @@ bool SinglyLinkedList::setNode(int data, int index)
 bool SinglyLinkedList::insertNode(int data, int index)
 {
 	int count = countNode();
-	if (count == 0 && index >0)
-	{
-		std::cout << "ERROR: Empty list.)" << std::endl;
-		return false;
-	}
-	if (index < 0 || index >= count)
+	if (index < 0 || (count == 0 && index >1))
 	{
 		std::cout << "ERROR: the index is out of range!(from 1 to max number)." << std::endl;
 		return false;
@@ -83,7 +78,6 @@ bool SinglyLinkedList::insertNode(int data, int index)
 	    	return true;
 	    }	
 	}
-
 }
 
 bool SinglyLinkedList::insertEnd(int data)
@@ -140,7 +134,6 @@ bool SinglyLinkedList::deleteNode(int index)
 			return true;
 		}
 	}
-
 }
 
 bool SinglyLinkedList::deleteEnd()
@@ -163,7 +156,6 @@ bool SinglyLinkedList::deleteEnd()
 		delete temp2;
 		return true;
 	}
-
 }
 
 // bool SinglyLinkedList::clearList()
@@ -197,7 +189,6 @@ bool SinglyLinkedList::reverseList()
 		head = previous;
 		return true;
 	}
-
 }
 
 bool SinglyLinkedList::displayNode(int index)
@@ -223,7 +214,6 @@ bool SinglyLinkedList::displayNode(int index)
 		std::cout << temp->data << std::endl;
 		return true;
 	}
-
 }
 
 bool SinglyLinkedList::displayList()
@@ -231,7 +221,7 @@ bool SinglyLinkedList::displayList()
 	int count = countNode();
 	if (count == 0)
 	{
-		std::cout << "Empty list" << std::endl;
+		std::cout << "Empty list." << std::endl;
 		return false;
 	}
 	else
@@ -245,8 +235,23 @@ bool SinglyLinkedList::displayList()
 		std::cout << "" << std::endl;
 		return true;
 	}
-
 }
+
+
+// bool SinglyLinkedList::printList(Node* head)
+// {
+// 	if (head == NULL)
+// 	{
+// 		return false;
+// 	}
+// 	else	
+// 	{
+// 		std::cout << head->data << " ";
+// 		printList();
+// 		return true;
+// 	}	
+// }
+
 
 SinglyLinkedList::~SinglyLinkedList()
 {
